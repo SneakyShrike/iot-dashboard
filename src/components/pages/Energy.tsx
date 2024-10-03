@@ -1,11 +1,9 @@
-import {} from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function Energy() 
 {
     return (
-    <>
-    <h1>Energy</h1>
-    </>
+        <PageHeader headerTitle="Energy"></PageHeader> 
     );
 };
 

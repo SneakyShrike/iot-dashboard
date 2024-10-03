@@ -1,11 +1,9 @@
-import { } from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function AssetTracking() 
 {
     return (
-    <>
-    <h1>Asset Tracking</h1>
-    </>
+        <PageHeader headerTitle="Asset Tracking"></PageHeader>       
     );
 };
 

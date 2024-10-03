@@ -1,11 +1,9 @@
-import {} from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function Surveillance() 
 {
     return (
-    <>
-    <h1>Surveillance</h1>
-    </>
+        <PageHeader headerTitle="Surveillance"></PageHeader>
     );
 };
 

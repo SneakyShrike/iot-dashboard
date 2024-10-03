@@ -1,9 +1,9 @@
-import {} from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function HomeIOT() 
 {
     return (
-    <h1>Home IOT</h1>
+        <PageHeader headerTitle="Home IOT"></PageHeader>
     );
 };
 

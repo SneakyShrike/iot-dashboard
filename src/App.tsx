@@ -11,24 +11,30 @@ import SigInt from './components/pages/SigInt';
 import AccountSettings from './components/pages/AccountSettings';
 import NotFound from './components/pages/NotFound';
 import { IcSectionContainer } from '@ukic/react';
+import { createUseStyles } from "react-jss";
 
 const App = () => 
 {
-  return (
+	// const useStyles = createUseStyles({divContainer: {display: "flex",},});
+	// const classes = useStyles();
+
+return (
 	<BrowserRouter>
-		<SideNav></SideNav>
-		<Routes>
-			<Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home-iot" element={<HomeIOT />} />
-			<Route path="/surveillance" element={<p>Surveillance</p>} />
-			<Route path="/energy" element={<Energy />} />
-			<Route path="/asset-tracking" element={<AssetTracking />} />
-			<Route path="/network" element={<Network />} />
-			<Route path="/sigint" element={<SigInt />} />
-			<Route path="/account-settings" element={<AccountSettings />} />
-			<Route path="*" element={<NotFound />} />
-		</Routes>
+		<main>
+		    <SideNav></SideNav>
+			<Routes>
+				<Route path="/" element={<Navigate to="/login" />} />
+            	<Route path="/login" element={<Login />} />
+            	<Route path="/home-iot" element={<HomeIOT />} />
+				<Route path="/surveillance" element={<Surveillance />} />
+				<Route path="/energy" element={<Energy />} />
+				<Route path="/asset-tracking" element={<AssetTracking />} />
+				<Route path="/network" element={<Network />} />
+				<Route path="/sigint" element={<SigInt />} />
+				<Route path="/account-settings" element={<AccountSettings />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</main>
 	</BrowserRouter>
   ); 
 };

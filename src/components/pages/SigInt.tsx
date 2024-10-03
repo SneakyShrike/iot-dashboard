@@ -1,11 +1,9 @@
-import {} from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function SigInt() 
 {
     return (
-    <>
-    <h1>SIGINT</h1>
-    </>
+        <PageHeader headerTitle="SIGINT"></PageHeader>
     );
 };
 

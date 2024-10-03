@@ -1,11 +1,9 @@
-import {} from "@ukic/react";
+import PageHeader from './PageHeader';
 
 function Network() 
 {
     return (
-    <>
-    <h1>Network</h1>
-    </>
+        <PageHeader headerTitle="Network"></PageHeader>
     );
 };
 

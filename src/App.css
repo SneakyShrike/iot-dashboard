@@ -2,27 +2,19 @@
 @import "@ukic/react/dist/core/core.css";
 @import "@ukic/react/dist/core/normalize.css";
 
-/* #root 
-{ 
-
-} */
-
-/* body
-{
-  height: 100%;
-  margin: 0;
-} */
-
-/* .nav-content
+main
 {
   display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* margin: auto;  */
+  /* height: 100vh;  */
 }
-.page-content
+
+header
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto; 
-  height: 100vh;
-} */
+  width: 100%;
+}
+
+
 
