@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import SideNav from './components/pages/SideNav';
-import Login from './components/pages/Login';
-import HomeIOT from './components/pages/HomeIOT';
-import Surveillance from './components/pages/Surveillance';
-import Energy from './components/pages/Energy';
-import AssetTracking from './components/pages/AssetTracking';
-import Network from './components/pages/Network';
-import SigInt from './components/pages/SigInt';
-import AccountSettings from './components/pages/AccountSettings';
-import NotFound from './components/pages/NotFound';
+import SideNav from './components/pages/SideNav/SideNav';
+import Login from './components/pages/Login/Login';
+import HomeIOT from './components/pages/HomeIOT/HomeIOT';
+import Surveillance from './components/pages/Surveillance/Surveillance';
+import Energy from './components/pages/Energy/Energy';
+import AssetTracking from './components/pages/AssetTracking/AssetTracking';
+import Network from './components/pages/Network/Network';
+import SigInt from './components/pages/SigInt/SigInt';
+import AccountSettings from './components/pages/AccountSettings/AccountSettings';
+import NotFound from './components/pages/NotFound/NotFound';
 import { IcSectionContainer } from '@ukic/react';
 import { createUseStyles } from "react-jss";
 
