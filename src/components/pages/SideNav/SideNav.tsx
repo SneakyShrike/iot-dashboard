@@ -1,5 +1,6 @@
 import { IcNavigationItem, IcSideNavigation, SlottedSVG } from "@ukic/react";
 import { NavLink } from "react-router-dom";
+import styles from './SideNav.module.css';
 import 
 { 
     mdiViewDashboard,

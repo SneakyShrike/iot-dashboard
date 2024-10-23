@@ -1,5 +1,6 @@
 import { IcEmptyState, IcButton } from "@ukic/react";
 import { NavLink } from "react-router-dom";
+import styles from './NotFound.module.css';
 
 function NotFound() 
 {

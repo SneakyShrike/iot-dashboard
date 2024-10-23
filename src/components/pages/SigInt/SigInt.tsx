@@ -1,4 +1,5 @@
 import PageHeader from '../../PageHeader/PageHeader';
+import styles from './SigInt.module.css';
 
 function SigInt() 
 {

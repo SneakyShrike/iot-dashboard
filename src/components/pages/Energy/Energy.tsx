@@ -1,4 +1,5 @@
 import PageHeader from '../../PageHeader/PageHeader';
+import styles from './Energy.module.css';
 
 function Energy() 
 {

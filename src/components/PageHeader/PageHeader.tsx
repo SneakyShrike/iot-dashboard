@@ -1,5 +1,6 @@
 import { IcPageHeader, IcButton, SlottedSVG  } from "@ukic/react";
 import {mdiPlus, mdiDelete } from '@mdi/js';
+import styles from './PageHeader.module.css';
 
 
 interface PageHeaderProps
@@ -10,7 +11,7 @@ interface PageHeaderProps
 const PageHeader = (props: PageHeaderProps) =>
 {
     return (      
-        <header>
+        <header className={styles.PageHeader}>
             <IcPageHeader size="small" heading={props.headerTitle}>
                 <IcButton slot="actions" variant="primary">Add a View
                     <SlottedSVG slot='left-icon' path={mdiPlus} />              

@@ -1,4 +1,5 @@
 import {} from "@ukic/react";
+import styles from './AccountSettings.module.css';
 
 function AccountSettings() 
 {
