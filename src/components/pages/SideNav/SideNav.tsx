@@ -16,6 +16,7 @@ import
 function SideNav() 
 {
     return (
+        <main className={styles.SideNav}>
         <IcSideNavigation appTitle="The Covenant">
             <NavLink to="/" slot="app-title">Dashboard</NavLink>
             <SlottedSVG slot='app-icon' viewBox="0 0 24 24" path={mdiViewDashboard} />
@@ -63,6 +64,7 @@ function SideNav()
                 </NavLink>
             </IcNavigationItem>
         </IcSideNavigation>
+        </main>
     );
 };
 

@@ -19,7 +19,7 @@ const App = () =>
 	// const classes = useStyles();
 
 return (
-	<BrowserRouter>
+    <BrowserRouter>
 		<main>
 		    <SideNav></SideNav>
 			<Routes>
@@ -35,7 +35,7 @@ return (
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</main>
-	</BrowserRouter>
+    </BrowserRouter>
   ); 
 };
 export default App
