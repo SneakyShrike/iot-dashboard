@@ -10,14 +10,9 @@ import Network from './components/pages/Network/Network';
 import SigInt from './components/pages/SigInt/SigInt';
 import AccountSettings from './components/pages/AccountSettings/AccountSettings';
 import NotFound from './components/pages/NotFound/NotFound';
-import { IcSectionContainer } from '@ukic/react';
-import { createUseStyles } from "react-jss";
 
 const App = () => 
 {
-	// const useStyles = createUseStyles({divContainer: {display: "flex",},});
-	// const classes = useStyles();
-
 return (
     <BrowserRouter>
 		<main>
