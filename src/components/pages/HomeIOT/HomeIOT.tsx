@@ -1,10 +1,10 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './HomeIOT.module.css';
 
 function HomeIOT() 
 {
     return (
-        <PageHeader headerTitle="Home IOT"></PageHeader>
+        <BasePage pageName='Home IOT'></BasePage>
     );
 };
 

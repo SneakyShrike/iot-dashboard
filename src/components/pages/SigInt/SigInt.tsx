@@ -1,10 +1,10 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './SigInt.module.css';
 
 function SigInt() 
 {
     return (
-        <PageHeader headerTitle="SIGINT"></PageHeader>
+        <BasePage pageName='SIG INT'></BasePage>
     );
 };
 

@@ -1,11 +1,11 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './Surveillance.module.css';
 
 
 function Surveillance() 
 {
     return (
-        <PageHeader headerTitle="Surveillance"></PageHeader>
+        <BasePage pageName='Surveillance'></BasePage>
     );
 };
 

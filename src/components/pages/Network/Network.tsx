@@ -1,10 +1,10 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './Network.module.css';
 
 function Network() 
 {
     return (
-        <PageHeader headerTitle="Network"></PageHeader>
+        <BasePage pageName='Network'></BasePage>
     );
 };
 

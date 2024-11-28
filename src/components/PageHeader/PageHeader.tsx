@@ -2,18 +2,33 @@ import { useState } from "react";
 import { IcPageHeader, IcButton, SlottedSVG } from "@ukic/react";
 import {mdiPlus, mdiDelete } from '@mdi/js';
 import styles from './PageHeader.module.css';
-import AddView from "../AddView/AddView";
+import AddWidgetDialog from "../AddView/AddWidgetDialog";
 
 interface PageHeaderProps
 {
     headerTitle: string;
+    onAdd: (newWidget: string) => void;
 }
 
 const PageHeader = (props: PageHeaderProps) =>
 {
-    const [openDialog, setOpenDialog] = useState<boolean>(false);
-    const handleDialogOpen = () => setOpenDialog(true);
-    const handleDialogClose = () => setOpenDialog(false);
+    const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
+
+    const handleDialogOpen = () => 
+    {
+        setDialogOpen(true);
+    };
+    
+    const handleDialogClose = () => 
+    {
+        setDialogOpen(false);
+    };
+    
+    const handleDialogConfirm = (newWidget: string) => 
+    {
+        props.onAdd(newWidget);
+        setDialogOpen(false);
+    };
 
     return (      
         <header className={styles.PageHeader}>
@@ -25,7 +40,7 @@ const PageHeader = (props: PageHeaderProps) =>
                         <SlottedSVG slot='left-icon' path={mdiDelete} />              
                     </IcButton>
             </IcPageHeader>
-            <AddView openDialog={openDialog} onClose={handleDialogClose} />
+            <AddWidgetDialog isDialogOpen={isDialogOpen} onClose={handleDialogClose} onConfirm={handleDialogConfirm} />
         </header>
         
     );

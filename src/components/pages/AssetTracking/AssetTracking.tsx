@@ -1,10 +1,10 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './AssetTracking.module.css';
 
 function AssetTracking() 
 {
     return (
-        <PageHeader headerTitle="Asset Tracking"></PageHeader>       
+        <BasePage pageName='Asset Tracking'></BasePage>    
     );
 };
 

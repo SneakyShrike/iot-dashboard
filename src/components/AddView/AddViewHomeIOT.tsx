@@ -9,12 +9,11 @@ const AddViewForm = (props: AddViewFormProps) =>
 {  
     return (
         <>
-            <IcSelect 
-                label="Type of IOT view"
-                helperText="Temperture, Air Quality etc."
-                placeholder="Temperture"                        
-                showClearButton>
-            </IcSelect>
+            <IcTextField 
+                label="Room"
+                helperText="Bedroom, Kitchen, Garden etc."
+                placeholder="Living Room">
+            </IcTextField>          
         </>
     );      
 };

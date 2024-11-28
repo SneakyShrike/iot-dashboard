@@ -1,10 +1,10 @@
-import PageHeader from '../../PageHeader/PageHeader';
+import BasePage from '../BasePage';
 import styles from './Energy.module.css';
 
 function Energy() 
 {
     return (
-        <PageHeader headerTitle="Energy"></PageHeader> 
+        <BasePage pageName='Energy'></BasePage>
     );
 };
 
