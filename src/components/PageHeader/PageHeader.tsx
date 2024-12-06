@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { IcPageHeader, IcButton, SlottedSVG } from "@ukic/react";
 import {mdiPlus, mdiDelete } from '@mdi/js';
-import styles from './PageHeader.module.css';
-import AddWidgetDialog from "../AddView/AddWidgetDialog";
+import AddWidgetDialog from "../AddWidget/AddWidgetDialog";
+import styles from './PageHeader.module.css'
 
 interface PageHeaderProps
 {
@@ -30,18 +30,18 @@ const PageHeader = (props: PageHeaderProps) =>
         setDialogOpen(false);
     };
 
-    return (      
-        <header className={styles.PageHeader}>
-            <IcPageHeader size="small" aligned="full-width" border="false" heading={props.headerTitle}>  
-                    <IcButton slot="actions" variant="primary" onClick={handleDialogOpen}>Add a View
-                        <SlottedSVG slot='left-icon' path={mdiPlus} />              
-                    </IcButton>
-                    <IcButton slot="actions" variant="destructive">Delete a View
-                        <SlottedSVG slot='left-icon' path={mdiDelete} />              
-                    </IcButton>
+    return (
+        <>
+            <IcPageHeader size="small" aligned="full-width" border="true" heading={props.headerTitle}>  
+                <IcButton slot="actions" variant="primary" onClick={handleDialogOpen}>Add Widget
+                    <SlottedSVG slot='left-icon' path={mdiPlus} />              
+                </IcButton>
+                <IcButton slot="actions" variant="destructive">Delete Widget
+                    <SlottedSVG slot='left-icon' path={mdiDelete} />              
+                </IcButton>
             </IcPageHeader>
             <AddWidgetDialog isDialogOpen={isDialogOpen} onClose={handleDialogClose} onConfirm={handleDialogConfirm} />
-        </header>
+        </>
         
     );
 };

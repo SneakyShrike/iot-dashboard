@@ -1,6 +1,7 @@
 import { useState } from "react";
-import PageHeader from '../PageHeader/PageHeader';
-import Widget from '../Widget/Widget';
+import PageHeader from '../../PageHeader/PageHeader';
+import Widget from '../../Widget/Widget';
+import styles from './BasePage.module.css';
 
 interface BasePageProps 
 {
@@ -22,16 +23,18 @@ const BasePage = (props: BasePageProps) =>
     };
 
     return (
-        <>
+      <div className={styles.container}>
+        <header className={styles.headerContainer}>
           <PageHeader headerTitle={props.pageName} onAdd={addWidget}></PageHeader>
-          <div>
-            {widgets.map((widget, index) => (
-              <Widget
-                key={index}
-                widgetData={widget}
-                onDelete={() => deleteWidget(index)}/>))}
-          </div>
-        </>
+        </header>
+        <main className={styles.widgetsContainer}>
+          {widgets.map((widget, index) => (
+            <Widget
+              key={index}
+              widgetData={widget}
+              onDelete={() => deleteWidget(index)}/>))}
+        </main>
+      </div>
     );
 };
 

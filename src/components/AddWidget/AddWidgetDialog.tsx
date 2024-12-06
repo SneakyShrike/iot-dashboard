@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IcDialog, IcSelect, IcTextField, SlottedSVG } from "@ukic/react";
-import {mdiPlus, mdiDelete } from '@mdi/js';
-import styles from './AddView.module.css';
-import AddViewHomeIOT from "./AddViewHomeIOT";
-import AddViewSurveillance from "./AddViewSurveillance";
-import Widget from '../Widget/Widget';
 
 interface AddWidgetDialogProps
 {

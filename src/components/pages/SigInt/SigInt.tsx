@@ -1,4 +1,4 @@
-import BasePage from '../BasePage';
+import BasePage from '../BasePage/BasePage';
 import styles from './SigInt.module.css';
 
 function SigInt() 

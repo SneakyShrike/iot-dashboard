@@ -1,4 +1,4 @@
-import styles from './HomeIOT.module.css';
+import styles from './Widget.module.css';
 import {IcSectionContainer} from "@ukic/react";
 
 interface WidgetProps 
