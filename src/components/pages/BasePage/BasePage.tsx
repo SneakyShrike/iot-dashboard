@@ -10,12 +10,12 @@ interface BasePageProps
 
 const BasePage = (props: BasePageProps) =>
 {
-    const [widgets, setWidgets] = useState<string[]>([]); // State to store widgets
+  const [widgets, setWidgets] = useState<{ name: string; description: string; location: string }[]>([]); // State to store widgets
 
-    const addWidget = (newWidget: string) => 
-    {
-        setWidgets((prevWidgets) => [...prevWidgets, newWidget]);
-    };
+    // Modify this to accept an object representing the entire widget
+  const addWidget = (newWidget: { name: string; description: string; location: string }) => {
+    setWidgets((prevWidgets) => [...prevWidgets, newWidget]); // Add new widget to the list
+  };
 
     const deleteWidget = (index: number) => 
     {

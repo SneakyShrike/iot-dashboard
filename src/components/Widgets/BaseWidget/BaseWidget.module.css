@@ -15,5 +15,7 @@
 
 .dataContainer
 {
+    display: flex;
+    flex-direction: column;
 
 }

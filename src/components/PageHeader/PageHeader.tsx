@@ -7,7 +7,7 @@ import styles from './PageHeader.module.css'
 interface PageHeaderProps
 {
     headerTitle: string;
-    onAdd: (newWidget: string) => void;
+    onAdd: (newWidget: { name: string; description: string; location: string }) => void; // Expecting a single widget object
 }
 
 const PageHeader = (props: PageHeaderProps) =>
@@ -24,7 +24,7 @@ const PageHeader = (props: PageHeaderProps) =>
         setDialogOpen(false);
     };
     
-    const handleDialogConfirm = (newWidget: string) => 
+    const handleDialogConfirm = (newWidget: { name: string; description: string; location: string }) => 
     {
         props.onAdd(newWidget);
         setDialogOpen(false);

@@ -1,54 +1,54 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { IcDialog, IcSelect, IcTextField, SlottedSVG } from "@ukic/react";
 
 interface HomeIOTWidgetDataProps
 {
-    widgetData: (newWidget: string) => void;
-    // isDialogOpen: boolean; // passed in state from PageHeader  
-    // onClose: () => void; // passed in handleDialogClose function from PageHeader
-    // onConfirm: (newWidget: string) => void; // passed in handleDialogConfirm function from PageHeader
+    widgetData: (data: { name: string; description: string; location: string }) => void; // Send object to parent
 }
 
 const HomeIOTWidgetData = (props: HomeIOTWidgetDataProps) =>
 {
-    // const currentPage = useLocation().pathname.replace(/\//g, '').toUpperCase();
-    //const [newWidgetData, setNewWidgetData] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        description: '',
+        location: '',
+      });
 
-    const onFormValueChange = (value: string) => 
-    {
-        //setNewWidgetData(value); 
-        props.widgetData(value);
-    };
-    
-    //   const handleCancel = () => 
-    //   {
-    //     setNewWidgetData(''); // Clear input
-    //     props.onClose(); // Calls the handleDialogClose function from PageHeader
-    //   };
-    
+    // Handle input changes
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => {
+      const updatedData = { ...prev, [field]: value };
+      // Whenever form data changes, send it to the parent
+      props.widgetData(updatedData); // Pass the entire object to the parent
+      return updatedData;
+    });
+  };
+   
     return (
-        // <IcDialog
-        //     size="large"
-        //     open={props.isDialogOpen} 
-        //     onIcDialogClosed={handleCancel}
-        //     onIcDialogConfirmed={handleConfirm}
-        //     onIcDialogCancelled={handleCancel}>
-        //     {<h1>Add a new widget</h1>}
         <>
-            {/* <IcTextField 
-                label="Name" 
-                placeholder="Living Room" 
-                helperText="Kitchen, Garage etc."
-                onIcChange={(event) => setNewWidgetData(event.detail.value)}
-            /> */}
-            <IcTextField 
-                label="Name" 
-                placeholder="Living Room" 
-                helperText="Kitchen, Garage etc."
-                onIcChange={(event) => onFormValueChange(event.detail.value)}
-            />
-        </>    
+        <IcTextField
+        label="Widget Name"
+        placeholder="Living Room"
+        helperText="Enter the name of the widget"
+        value={formData.name}
+        onIcChange={(event) => handleInputChange('name', event.detail.value)}
+      />
+      <IcTextField
+        label="Description"
+        placeholder="A brief description"
+        helperText="Enter a short description"
+        value={formData.description}
+        onIcChange={(event) => handleInputChange('description', event.detail.value)}
+      />
+      <IcTextField
+        label="Location"
+        placeholder="Kitchen, Garage"
+        helperText="Enter the location of the widget"
+        value={formData.location}
+        onIcChange={(event) => handleInputChange('location', event.detail.value)}
+      />
+    </>   
     );
 };
 
