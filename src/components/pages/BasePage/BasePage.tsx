@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageHeader from '../../PageHeader/PageHeader';
-import Widget from '../../Widget/Widget';
+import BaseWidget from '../../Widgets/BaseWidget/BaseWidget';
 import styles from './BasePage.module.css';
 
 interface BasePageProps 
@@ -29,7 +29,7 @@ const BasePage = (props: BasePageProps) =>
         </header>
         <main className={styles.widgetsContainer}>
           {widgets.map((widget, index) => (
-            <Widget
+            <BaseWidget
               key={index}
               widgetData={widget}
               onDelete={() => deleteWidget(index)}/>))}

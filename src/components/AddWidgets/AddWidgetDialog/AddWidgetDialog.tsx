@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IcDialog, IcSelect, IcTextField, SlottedSVG } from "@ukic/react";
+import HomeIOTWidgetData from "../HomeIOTWidgetData/HomeIOTWidgetData";
 
 interface AddWidgetDialogProps
 {
@@ -11,7 +12,7 @@ interface AddWidgetDialogProps
 
 const AddWidgetDialog = (props: AddWidgetDialogProps) =>
 {
-    // const currentPage = useLocation().pathname.replace(/\//g, '').toUpperCase();
+    const currentPage = useLocation().pathname.replace(/\//g, '').toUpperCase();
     const [newWidgetData, setNewWidgetData] = useState('');
 
     const handleConfirm = () => 
@@ -29,6 +30,10 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
         setNewWidgetData(''); // Clear input
         props.onClose(); // Calls the handleDialogClose function from PageHeader
       };
+
+      const handleWidgetData = (data: string) => {
+        setNewWidgetData(data);
+      };
     
     return (
         <IcDialog
@@ -37,18 +42,10 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
             onIcDialogClosed={handleCancel}
             onIcDialogConfirmed={handleConfirm}
             onIcDialogCancelled={handleCancel}>
-            {<h1>Add a new view</h1>}
-            <IcTextField 
-                label="Room" 
-                placeholder="Living Room" 
-                helperText="Kitchen, Garage etc."
-                onIcChange={(event) => setNewWidgetData(event.detail.value)}
-            />
-            {/* <section>
-                {currentPage === 'HOME-IOT' && (<AddViewHomeIOT/>)}
-                {currentPage === 'SURVEILLANCE' && (<AddViewSurveillance/>)}
-                {selectedComponent === 'Widget' && <Widget/>}
-            </section> */}
+            {<h1>Add a new widget</h1>}
+            <section>
+                {currentPage === 'HOME-IOT' && (<HomeIOTWidgetData widgetData={handleWidgetData}/>)}
+            </section>
         </IcDialog>
 
     );

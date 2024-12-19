@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IcPageHeader, IcButton, SlottedSVG } from "@ukic/react";
 import {mdiPlus, mdiDelete } from '@mdi/js';
-import AddWidgetDialog from "../AddWidget/AddWidgetDialog";
+import AddWidgetDialog from "../AddWidgets/AddWidgetDialog/AddWidgetDialog";
 import styles from './PageHeader.module.css'
 
 interface PageHeaderProps
@@ -31,7 +31,7 @@ const PageHeader = (props: PageHeaderProps) =>
     };
 
     return (
-        <>
+        <header className={styles.container}>
             <IcPageHeader size="small" aligned="full-width" border="true" heading={props.headerTitle}>  
                 <IcButton slot="actions" variant="primary" onClick={handleDialogOpen}>Add Widget
                     <SlottedSVG slot='left-icon' path={mdiPlus} />              
@@ -41,7 +41,7 @@ const PageHeader = (props: PageHeaderProps) =>
                 </IcButton>
             </IcPageHeader>
             <AddWidgetDialog isDialogOpen={isDialogOpen} onClose={handleDialogClose} onConfirm={handleDialogConfirm} />
-        </>
+        </header>
         
     );
 };

@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import SideNav from './components/pages/SideNav/SideNav';
-import Login from './components/pages/Login/Login';
-import HomeIOT from './components/pages/HomeIOT/HomeIOT';
-import Surveillance from './components/pages/Surveillance/Surveillance';
-import Energy from './components/pages/Energy/Energy';
-import AssetTracking from './components/pages/AssetTracking/AssetTracking';
-import Network from './components/pages/Network/Network';
-import SigInt from './components/pages/SigInt/SigInt';
-import AccountSettings from './components/pages/AccountSettings/AccountSettings';
-import NotFound from './components/pages/NotFound/NotFound';
+import SideNav from './components/Pages/SideNav/SideNav';
+import Login from './components/Pages/Login/Login';
+import HomeIOT from './components/Pages/HomeIOT/HomeIOT';
+import Surveillance from './components/Pages/Surveillance/Surveillance';
+import Energy from './components/Pages/Energy/Energy';
+import AssetTracking from './components/Pages/AssetTracking/AssetTracking';
+import Network from './components/Pages/Network/Network';
+import SigInt from './components/Pages/SigInt/SigInt';
+import AccountSettings from './components/Pages/AccountSettings/AccountSettings';
+import NotFound from './components/Pages/NotFound/NotFound';
 
 const App = () => 
 {
