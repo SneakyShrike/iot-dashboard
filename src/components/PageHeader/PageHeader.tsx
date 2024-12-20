@@ -7,26 +7,35 @@ import styles from './PageHeader.module.css'
 interface PageHeaderProps
 {
     headerTitle: string;
-    onAdd: (newWidget: { name: string; description: string; location: string }) => void; // Expecting a single widget object
+    // definition for addWidget function in BasePage
+    onAdd: (newWidget: { name: string; description: string; location: string }) => void;
 }
 
 const PageHeader = (props: PageHeaderProps) =>
 {
+     // define useState hook for getting current state (isDialogOpen) and setting state (setDialogOpen function)
     const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
 
+    // open the dialog
     const handleDialogOpen = () => 
     {
+        // updates isDialogOpen to true 
         setDialogOpen(true);
     };
     
+    // close the dialog
     const handleDialogClose = () => 
     {
+        // updates isDialogOpen to false
         setDialogOpen(false);
     };
-    
+
+    // called in AddWidgetDialog when the user confirms, widget object is passed from AddWidgetDialog
     const handleDialogConfirm = (newWidget: { name: string; description: string; location: string }) => 
     {
+        // calls the addWidget function in BasePage
         props.onAdd(newWidget);
+        // updates isDialogOpen to false
         setDialogOpen(false);
     };
 
