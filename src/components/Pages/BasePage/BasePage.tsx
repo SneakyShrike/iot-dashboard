@@ -13,8 +13,8 @@ const BasePage = (props: BasePageProps) =>
   // define useState hook for getting current state (widgets) and setting state (setWidgets function)
   // this defines an array of widget objects
   //const [widgets, setWidgets] = useState<{ name: string; description: string; location: string }[]>([]);
-  const [widgetsByPage, setWidgetsByPage] = useState<{ [key: string]: { name: string; description: string; location: string }[] }>({});
-
+  const [widgetsByPage, setWidgetsByPage] = useState<{ [key: string]: Record<string, string>[] }>({});
+  
   // called in PageHeader when the user confirms, widget object data is passed from PageHeader
   // const addWidget = (newWidget: { name: string; description: string; location: string }) => 
   // {
@@ -24,7 +24,7 @@ const BasePage = (props: BasePageProps) =>
   //   // adds a new newWidget object to the widgets array that uses the spread (...) operator to copy the widget object data to new widget object
   // };
 
-  const addWidget = (newWidget: { name: string; description: string; location: string }) => 
+  const addWidget = (newWidget: Record<string, string>) => 
   {
     setWidgetsByPage((prevWidgets) => 
     {

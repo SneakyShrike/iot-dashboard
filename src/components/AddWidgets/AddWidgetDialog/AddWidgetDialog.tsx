@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IcDialog, IcSelect, IcTextField, SlottedSVG } from "@ukic/react";
 import HomeIOTWidgetData from "../HomeIOTWidgetData/HomeIOTWidgetData";
+import SurveillanceWidgetData from "../SurveillanceWidgetData/SurveillanceWidgetData";
 
 interface AddWidgetDialogProps
 {
@@ -10,7 +11,7 @@ interface AddWidgetDialogProps
      // definition for handleDialogClose function in PageHeader
     onClose: () => void; 
     // definition for handleDialogConfirm function in PageHeader
-    onConfirm: (newWidget: { name: string; description: string; location: string }) => void;
+    onConfirm: (newWidget: Record<string, string>) => void;
 }
 
 const AddWidgetDialog = (props: AddWidgetDialogProps) =>
@@ -19,20 +20,28 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
     const currentPage = useLocation().pathname.replace(/\//g, '').toUpperCase();
 
     // define useState hook for getting current state (widgetData) and setting state (setWidgetData function)
-    const [widgetData, setWidgetData] = useState<{ name: string; description: string; location: string }>
-    ({
-      // initialise object data as empty strings
-      name: '',
-      description: '',
-      location: ''
-    });
+    // const [widgetData, setWidgetData] = useState<{ name: string; description: string; location: string }>
+    // ({
+    //   // initialise object data as empty strings
+    //   name: '',
+    //   description: '',
+    //   location: ''
+    // });
+
+    const [widgetData, setWidgetData] = useState<Record<string, string>>({});
 
     // updates the widgetData with the latest data by calling setWidgetData, this is called in WidgetData components where the form data is passed
-    const handleWidgetData = (data: { name: string; description: string; location: string }) => 
-    {
-      // updates widgetData value
-      setWidgetData(data); 
-    };
+    // const handleWidgetData = (data: { name: string; description: string; location: string }) => 
+    // {
+    //   // updates widgetData value
+    //   setWidgetData(data); 
+    // };
+
+    const handleWidgetData = (data: Record<string, string>) => 
+      {
+        // updates widgetData value
+        setWidgetData(data); 
+      };
 
   // when the user confirms add a new widget
   const handleConfirm = () => 
@@ -40,7 +49,7 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
     // calls handleDialogConfirm function in PageHeader and pass it object with form data
     props.onConfirm(widgetData); 
     // clear object data after confirm
-    setWidgetData({ name: '', description: '', location: '' }); 
+    setWidgetData({}); 
     // call the handleDialogClose function in PageHeader
     props.onClose();
   };
@@ -49,7 +58,7 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
   const handleCancel = () => 
   {
     // clear object data after confirm
-    setWidgetData({ name: '', description: '', location: '' }); 
+    setWidgetData({}); 
      // call the handleDialogClose function in PageHeader
     props.onClose(); // Close the dialog
   };
@@ -64,6 +73,7 @@ const AddWidgetDialog = (props: AddWidgetDialogProps) =>
             {<h1>Add a new widget</h1>}
             <section>
                 {currentPage === 'HOME-IOT' && (<HomeIOTWidgetData widgetData={handleWidgetData}/>)}
+                {currentPage === 'SURVEILLANCE' && (<SurveillanceWidgetData widgetData={handleWidgetData}/>)}
             </section>
         </IcDialog>
 

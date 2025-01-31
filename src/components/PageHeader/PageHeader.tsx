@@ -8,7 +8,7 @@ interface PageHeaderProps
 {
     headerTitle: string;
     // definition for addWidget function in BasePage
-    onAdd: (newWidget: { name: string; description: string; location: string }) => void;
+    onAdd: (newWidget: Record<string, string>) => void;
 }
 
 const PageHeader = (props: PageHeaderProps) =>
@@ -31,7 +31,7 @@ const PageHeader = (props: PageHeaderProps) =>
     };
 
     // called in AddWidgetDialog when the user confirms, widget object is passed from AddWidgetDialog
-    const handleDialogConfirm = (newWidget: { name: string; description: string; location: string }) => 
+    const handleDialogConfirm = (newWidget: Record<string, string>) => 
     {
         // calls the addWidget function in BasePage
         props.onAdd(newWidget);
